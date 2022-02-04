@@ -1,16 +1,19 @@
 <template>  
     <div class="container-cards">
-        <div class="cards">
+        <div class="card">
             <img :src="getMoviePoster()" alt="">
+
+            <div class="card-hover" >
+                <div class="title">Titolo: {{movie.title}}</div>
+                <div class="original-title">Titolo originale: {{movie.original_title}}</div>
+                <div class="language">Lingua originale:
+                    <img :src="require(`../../public/flags/${movie.original_language}.png`)">
+                </div>
+                <div class="vote">Voto: {{movie.vote_average}}</div>
+                <div class="overview">Overflow: {{movie.overview}}</div>
+            </div> 
         </div>
 
-        <!-- <div class="cards-hover" >
-            <div class="title">Titolo: {{movie.title}}</div>
-            <div class="original-title">Titolo originale: {{movie.original_title}}</div>
-            <div class="language">Lingua originale: {{movie.original_language}}</div>
-            <div class="vote">Voto: {{movie.vote_average}}</div>
-            <div class="overview">Overflow: {{movie.overview}}</div>
-        </div> -->
     </div>
 </template>
 
@@ -34,29 +37,37 @@ export default {
 .container-cards {
     margin-top: 20px;
 
-    .cards {
+    .card {
         padding: 10px;
 
         img {
-            // cursor: pointer;
             width: 200px;
             height: 300px;
+            cursor: pointer;
+        }
+        
+        // .card-hover {
+        //     display: none;
+        //     padding: 15px;
+        //     color: white;
+        //     background-color: black;
+        //     border: 2px solid #fff;
+        //     overflow: auto;
+            
+        //     > div {
+        //         margin: 5px 0;
+        //     }
+        // }
+
+        // &:hover .card-hover {
+        //     display: block;
+        // }
+
+        .language > img {
+            width: 15px;
+            height: 10px;
         }
     }
-
-    // .cards-hover {
-    //     display: none;
-    //     width: 200px;
-    //     height: 300px;
-    //     padding: 15px;
-    //     color: white;
-    //     background-color: black;
-    //     border: 2px solid #fff;
-        
-    //     > div {
-    //         margin: 5px 0;
-    //     }
-    // }
 
 }
 </style>

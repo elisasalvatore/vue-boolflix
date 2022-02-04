@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted() {
-    // this.searchMovies('fu') //lista di film a display che vedremo all'inizio e ad ogni refresh di pagina
+    this.searchMovies('nk') //lista di film a display che vedremo all'inizio e ad ogni refresh di pagina
   },
   methods: {
     findedResults(inputUser) {
