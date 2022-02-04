@@ -4,7 +4,7 @@
 
     <div>
       <input v-model="inputUser" type="text" placeholder="Search"> 
-      <button @click="$emit('filter', inputUser)">Cerca</button>
+      <button @click="$emit('search', inputUser)">Cerca</button>
     </div>
   </header>
 </template>
@@ -12,8 +12,8 @@
 <script>
 export default {
   data() {
-    return{
-      inputUser:''
+    return {
+      inputUser:'',
     }
   },
 }
@@ -35,7 +35,12 @@ header {
     font-weight: bold;
   }
 
+  input {
+    padding: 3px;
+  }
+
   button {
+    padding: 3px 5px;
     margin-left: 10px;
   }
 }

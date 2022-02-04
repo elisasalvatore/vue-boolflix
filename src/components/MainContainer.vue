@@ -23,6 +23,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-     background-color: #333;
+    background-color: #333;
 }
 </style>

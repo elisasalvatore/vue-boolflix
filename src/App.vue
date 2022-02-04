@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @filter="filterTitles"/>
+    <Header @search="findedResults"/>
     <MainContainer :movies="movies"/>
   </div>
 </template>
@@ -19,16 +19,40 @@ export default {
   data() {
     return {
       movies: [],
+      series: [],
     }
   },
+  mounted() {
+    // this.searchMovies('fu') //lista di film a display che vedremo all'inizio e ad ogni refresh di pagina
+  },
   methods: {
-    filterTitles(inputUser) {
-      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=f2ee1ac2d6b554f6a4a7b4304de1e553&query=${inputUser}`).then((response) => {
+    findedResults(inputUser) {
+      this.searchMovies(inputUser);
+      this.searchTvSeries(inputUser);
+    },
+    searchMovies(inputUser) {
+      // AXIOS - BEST PRACTICE:
+      const params = {
+        query: inputUser,
+        api_key: 'f2ee1ac2d6b554f6a4a7b4304de1e553'
+      }
+        //axios.get(`https://api.themoviedb.org/3/search/movie?api_key=f2ee1ac2d6b554f6a4a7b4304de1e553&language=it_IT&query=${inputUser}`)
+      axios.get(`https://api.themoviedb.org/3/search/movie?language=it_IT`, {params}).then((response) => {
         this.movies = response.data.results;
+        // console.log(response)
       });
-      // console.log(this.movies)
       return this.movies
     },
+    searchTvSeries(inputUser) {
+      const params = {
+        query: inputUser,
+        api_key: 'f2ee1ac2d6b554f6a4a7b4304de1e553',
+      }
+      axios.get(`https://api.themoviedb.org/3/search/tv?language=it_IT`, {params}).then((response) => {
+        this.series = response.data.results;
+      });
+      return this.series;
+    }
   }
 }
 </script>
