@@ -4,13 +4,13 @@
             <img :src="getMoviePoster()" alt="">
 
             <div class="card-hover" >
-                <div class="title">Titolo: {{movie.title}}</div>
-                <div class="original-title">Titolo originale: {{movie.original_title}}</div>
-                <div class="language">Lingua originale:
+                <div class="title"><b>Titolo:</b> {{movie.title}}</div>
+                <div class="original-title"><b>Titolo originale:</b> {{movie.original_title}}</div>
+                <div class="language"><b>Lingua originale:</b>
                     <img :src="require(`../../public/flags/${movie.original_language}.png`)">
                 </div>
-                <div class="vote">Voto: {{movie.vote_average}}</div>
-                <div class="overview">Overflow: {{movie.overview}}</div> 
+                <div class="vote"><b>Voto:</b> {{movie.vote_average}}</div>
+                <div class="overview"><b>Overflow:</b> {{movie.overview}}</div> 
             </div>
         </div>
 
@@ -40,8 +40,9 @@ export default {
     .card {
         position: relative;
         padding: 10px;
+        font-size: 12px;
 
-        img {
+        > img {
             width: 200px;
             height: 300px;
             cursor: pointer;
@@ -60,6 +61,10 @@ export default {
             > div {
                 margin: 5px 0;
             }
+
+            b {
+                font-size: 14px;;
+            }
         }
 
         &:hover .card-hover {
@@ -71,6 +76,7 @@ export default {
         .language > img {
             width: 15px;
             height: 10px;
+            margin-left: 5px;
         }
     }
 

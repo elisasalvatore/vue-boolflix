@@ -3,7 +3,7 @@
     <div class=title>Boolflix</div> 
 
     <div>
-      <input v-model="inputUser" type="text" placeholder="Search"> 
+      <input v-model="inputUser" type="text" placeholder="Cerca"> 
       <button @click="$emit('search', inputUser)">Cerca</button>
     </div>
   </header>
