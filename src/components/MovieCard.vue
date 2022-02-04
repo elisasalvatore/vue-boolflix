@@ -10,8 +10,8 @@
                     <img :src="require(`../../public/flags/${movie.original_language}.png`)">
                 </div>
                 <div class="vote">Voto: {{movie.vote_average}}</div>
-                <div class="overview">Overflow: {{movie.overview}}</div>
-            </div> 
+                <div class="overview">Overflow: {{movie.overview}}</div> 
+            </div>
         </div>
 
     </div>
@@ -38,6 +38,7 @@ export default {
     margin-top: 20px;
 
     .card {
+        position: relative;
         padding: 10px;
 
         img {
@@ -46,22 +47,26 @@ export default {
             cursor: pointer;
         }
         
-        // .card-hover {
-        //     display: none;
-        //     padding: 15px;
-        //     color: white;
-        //     background-color: black;
-        //     border: 2px solid #fff;
-        //     overflow: auto;
+        .card-hover {
+            display: none;
+            width: 200px;
+            height: 300px;
+            padding: 15px;
+            color: white;
+            background-color: black;
+            border: 2px solid #fff;
+            overflow: auto;
             
-        //     > div {
-        //         margin: 5px 0;
-        //     }
-        // }
+            > div {
+                margin: 5px 0;
+            }
+        }
 
-        // &:hover .card-hover {
-        //     display: block;
-        // }
+        &:hover .card-hover {
+            display: block;
+            position: absolute;
+            top: 10px;
+        }
 
         .language > img {
             width: 15px;
