@@ -20,7 +20,7 @@
 <script>
 export default {
     props: { 
-        movie: Object
+        movie: Object,
     },
     methods: {
         getMoviePoster() {
@@ -34,51 +34,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container-cards {
-    margin-top: 20px;
-
-    .card {
-        position: relative;
-        padding: 10px;
-        font-size: 12px;
-
-        > img {
-            width: 200px;
-            height: 300px;
-            cursor: pointer;
-        }
-        
-        .card-hover {
-            display: none;
-            width: 200px;
-            height: 300px;
-            padding: 15px;
-            color: white;
-            background-color: black;
-            border: 2px solid #fff;
-            overflow: auto;
-            
-            > div {
-                margin: 5px 0;
-            }
-
-            b {
-                font-size: 14px;;
-            }
-        }
-
-        &:hover .card-hover {
-            display: block;
-            position: absolute;
-            top: 10px;
-        }
-
-        .language > img {
-            width: 15px;
-            height: 10px;
-            margin-left: 5px;
-        }
-    }
-
-}
+@import './style/cards.scss';
 </style>

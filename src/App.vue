@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @search="findedResults"/>
-    <MainContainer :movies="movies"/>
+    <MainContainer :movies="movies" :series="series"/>
   </div>
 </template>
 
@@ -23,12 +23,23 @@ export default {
     }
   },
   mounted() {
-    //chiamata API delle cards a display nella 'home'
-    axios.get(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=f2ee1ac2d6b554f6a4a7b4304de1e553`).then((response) => { //chiamata API dei film più popolari
-      this.movies = response.data.results; 
-    })
+    this.getHomeMovies();
+    // this.getHomepage();
   },
   methods: {
+    // getHomepage(getHomeMovies, getHomeSeries) {
+    //   return getHomeMovies.concat(getHomeSeries);
+    // },
+    getHomeMovies() { //chiamata API delle cards a display nella 'home'
+      axios.get(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=f2ee1ac2d6b554f6a4a7b4304de1e553`).then((response) => { //chiamata API dei film più popolari
+        this.movies = response.data.results; 
+      })
+    },
+    // getHomeSeries() { -------CERCARE CODICE API
+    //   axios.get(`https://api.themoviedb.org/3/discover/serie?sort_by=popularity.desc&api_key=f2ee1ac2d6b554f6a4a7b4304de1e553`).then((response) => { //chiamata API dei film più popolari
+    //     this.series = response.data.results; 
+    //   })
+    // },
     findedResults(inputUser) {
       this.searchMovies(inputUser);
       this.searchTvSeries(inputUser);
@@ -55,7 +66,7 @@ export default {
         this.series = response.data.results;
       });
       return this.series;
-    }
+    },
   }
 }
 </script>
