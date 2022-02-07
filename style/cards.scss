@@ -20,7 +20,7 @@
             color: white;
             background-color: black;
             border: 2px solid #fff;
-            overflow: auto;
+            overflow-y: auto;
             
             > div {
                 margin: 5px 0;
@@ -28,6 +28,12 @@
 
             b {
                 font-size: 14px;;
+            }
+
+            .language-flags > img {
+                width: 15px;
+                height: 10px;
+                margin-left: 5px;
             }
         }
 
@@ -37,10 +43,5 @@
             top: 10px;
         }
 
-        .language > img {
-            width: 15px;
-            height: 10px;
-            margin-left: 5px;
-        }
     }
 }

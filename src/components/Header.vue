@@ -4,12 +4,12 @@
 
     <div class="hd-right">
       <div class="homepage-buttons">
-        <button class="bt-movies">FILM</button> 
-        <button class="bt-series">SERIE TV</button> 
+        <button @click="$emit('getHomeMovies')" class="bt-movies">FILM</button>
+        <button @click="$emit('getHomeSeries')" class="bt-series">SERIE TV</button> 
       </div> 
 
       <div class="search-bar">
-        <input v-model="inputUser" type="text" placeholder="Cerca"> 
+        <input v-model="inputUser" @keyup.enter="$emit('search', inputUser)" type="text" placeholder="Cerca"> 
         <button @click="$emit('search', inputUser)">Cerca</button>
       </div>
     </div>
