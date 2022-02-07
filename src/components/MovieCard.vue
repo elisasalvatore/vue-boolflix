@@ -5,7 +5,7 @@
 
             <div class="card-hover" >
                 <div class="title"><b>Titolo:</b> {{movie.title}}</div>
-                <div class="original-title"><b>Titolo originale:</b> {{movie.original_title}}</div>
+                <div class="original-title"><b>Titolo originale:</b>{{movie.original_title}}</div>
 
                 <div class="language-flags">
                     <b>Lingua originale:</b>

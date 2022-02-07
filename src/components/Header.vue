@@ -1,17 +1,13 @@
 <template>
   <header>
-    <div class="title">Boolflix</div>
-
     <div class="hd-right">
-      <div class="homepage-buttons">
-        <button @click="$emit('getHomeMovies')" class="bt-movies">FILM</button>
-        <button @click="$emit('getHomeSeries')" class="bt-series">SERIE TV</button> 
-      </div> 
+      <div class="title">Boolflix</div>
+      
+    </div>
 
-      <div class="search-bar">
-        <input v-model="inputUser" @keyup.enter="$emit('search', inputUser)" type="text" placeholder="Cerca"> 
-        <button @click="$emit('search', inputUser)">Cerca</button>
-      </div>
+    <div class="search-bar">
+      <input v-model="inputUser" @keyup.enter="$emit('search', inputUser)" type="text" placeholder="Cerca"> 
+      <button @click="$emit('search', inputUser)">Cerca</button>
     </div>
   </header>
 </template>
@@ -47,36 +43,17 @@ header {
     display: flex;
     align-items: center;
 
-    .homepage-buttons { 
-      margin: 0 20px;
-
-      button {
-        margin-left: 10px;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 20px;
-        background-color: #333;
-        color: red;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #fff;
-        }
-      }
-    }
-
-    .search-bar {
-      input {
-        padding: 3px;
-      }
-
-      button {
-        padding: 3px 5px;
-        margin-left: 10px;
-      }
-    }
   }  
+
+  .search-bar {
+    input {
+      padding: 3px;
+    }
+
+    button {
+      padding: 3px 5px;
+      margin-left: 10px;
+    }
+  }
 }
 </style>

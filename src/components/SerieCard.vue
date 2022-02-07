@@ -4,12 +4,12 @@
             <img :src="getSeriePoster()" alt="">
 
             <div class="card-hover" >
-                <div class="name"><b>Titolo:</b> {{serie.name}}</div>
-                <div class="original-name"><b>Titolo originale:</b> {{serie.name}}</div>
+                <div class="name"><b>Titolo:</b>{{serie.name}}</div>
+                <div class="original-name"><b>Titolo originale:</b>{{serie.name}}</div>
                 
                 <div class="language-flags">
                     <b>Lingua originale:</b>
-                    <img :src=" getFlags(serie.original_language)" alt="Non specificata">
+                    <img :src="getFlags(serie.original_language)" alt="Non specificata">
                     <!-- ciò che viene scritto nell'attributo 'alt' verrà visualizzato quando l'immagine della bandiera non sarà presente nella cartella 'flags' -->
                 </div>
 
