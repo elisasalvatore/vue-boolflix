@@ -27,15 +27,11 @@ export default {
   },
   methods: {
     getHomepage() {
-      this.getPopularMovies();
-      this.getPopularSeries();
-    },
-    getPopularMovies() { //chiamata API dei film più popolari
+      //chiamata API dei film più popolari
       axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=f2ee1ac2d6b554f6a4a7b4304de1e553&language=it-IT&page=1`).then((response) => {
         this.movies = response.data.results; 
       })
-    },
-    getPopularSeries() { //chiamata API delle serie televisive più popolari
+      //chiamata API delle serie televisive più popolari
       axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=f2ee1ac2d6b554f6a4a7b4304de1e553&language=it-IT&page=1`).then((response) => {
         this.series = response.data.results; 
       })
